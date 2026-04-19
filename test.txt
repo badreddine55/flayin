@@ -1,0 +1,15 @@
+nb_drones: 4
+
+start_hub: start 0 0 [max_drones=4]
+hub: bottleneck 1 0 [max_drones=1]
+hub: alt_a 1 1 [max_drones=1]
+hub: alt_b 2 1 [max_drones=1]
+hub: middle 2 0 [max_drones=1]
+end_hub: goal 3 0 [max_drones=4]
+
+connection: start-bottleneck [max_link_capacity=1]
+connection: start-alt_a [max_link_capacity=1]
+connection: alt_a-alt_b [max_link_capacity=1]
+connection: alt_b-goal [max_link_capacity=1]
+connection: bottleneck-middle [max_link_capacity=1]
+connection: middle-goal [max_link_capacity=1]
